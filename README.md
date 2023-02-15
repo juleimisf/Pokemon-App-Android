@@ -57,6 +57,13 @@ To install the app, follow these steps:
 2. Open the project in Android Studio
 3. Build the project and run it on an emulator or physical device
 
+### Note
+
+This project is in constant evolution and more tools, features, and improvements will be added over time. Feel free to explore the code and make suggestions or report issues through the issues on GitHub.
+
+Thank you for your interest in this project and for your support in its ongoing development.
+
+
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
