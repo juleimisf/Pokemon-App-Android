@@ -46,8 +46,8 @@ This app utilizes the PokeAPI, a public API that provides information about Poke
 
 Here are some screenshots of the app in action:
 
-![Screenshot_1676488673](https://user-images.githubusercontent.com/16981896/219138630-105f34c0-f63c-4161-9957-aa463072f560.png)
-![Screenshot_1676488681](https://user-images.githubusercontent.com/16981896/219138633-42be3060-3608-46ef-9cfd-dc41c983e213.png)
+![Screenshot_1676488673](https://user-images.githubusercontent.com/16981896/219140043-158c0b8d-fd78-4274-80ef-c7a932b590a0.png)
+![Screenshot_1676488681](https://user-images.githubusercontent.com/16981896/219140053-5ae241ca-46e8-48a9-9243-d37006d47f36.png)
 
 ## Installation
 
