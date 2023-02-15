@@ -40,7 +40,8 @@ Each library was chosen for a specific purpose based on its features and functio
 
 ## API Used
 
-This app utilizes the PokeAPI, a public API that provides information about Pokemon. The API returns data in JSON format, which is parsed using Retrofit and displayed in the app.
+This app utilizes the [PokeAPI](https://pokeapi.co/)
+, a public API that provides information about Pokemon. The API returns data in JSON format, which is parsed using Retrofit and displayed in the app.
 
 ## Screenshots
 
