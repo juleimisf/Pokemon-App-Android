@@ -1,4 +1,4 @@
-package com.example.desafio3
+package com.example.desafio3.ui
 
 import android.os.Bundle
 import android.util.Log
@@ -11,6 +11,10 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.desafio3.Pokemon
+import com.example.desafio3.PokemonViewState
+import com.example.desafio3.R
+import com.example.desafio3.RetrofitClient
 import com.example.desafio3.data.PokemonRepositoryImpl
 import kotlinx.android.synthetic.main.fragment_pokemons_list.*
 
@@ -18,7 +22,7 @@ private const val MAX_COLUM = 3
 const val ITEM_DATA_POKEMON = "MAX_COLUM"
 class PokemonListFragment : Fragment() {
 
-    private lateinit var movieListAdapter: PokemonAdapter
+    private lateinit var pokemonListAdapter: PokemonAdapter
     private val retrofitService = RetrofitClient
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -46,7 +50,7 @@ class PokemonListFragment : Fragment() {
         viewModel.viewState.observe(requireActivity(), Observer { viewState ->
             when (viewState) {
                 is PokemonViewState.Data -> {
-                    handleMoviesList(viewState.data.results)
+                    handlePokemonList(viewState.data.results)
                 }
                 is PokemonViewState.Loading -> {
                     simple_progress_bar.visibility = View.VISIBLE
@@ -54,27 +58,30 @@ class PokemonListFragment : Fragment() {
                 is PokemonViewState.Error -> {
                     Log.e("Error", "get pokemon list failed :(")
                 }
+                else -> {
+                    throw IllegalArgumentException("No state view")
+                }
             }
         })
         viewModel.loadPokemons()
     }
 
     private fun initView() {
-        movieListAdapter = PokemonAdapter(::onMovieClick)
+        pokemonListAdapter = PokemonAdapter(::onPokemonClick)
 
-        rv_movies.apply {
+        rv_list.apply {
             layoutManager = GridLayoutManager(context, MAX_COLUM)
-            adapter = movieListAdapter
+            adapter = pokemonListAdapter
         }
     }
 
-    private fun onMovieClick(item: Pokemon) {
+    private fun onPokemonClick(item: Pokemon) {
         findNavController().navigate(R.id.action_pokemonsListFragment_to_pokemonsDetailFragment, bundleOf( ITEM_DATA_POKEMON to item))
     }
 
-    private fun handleMoviesList(data: List<Pokemon>) {
-        movieListAdapter.updatePokemons(data)
+    private fun handlePokemonList(data: List<Pokemon>) {
+        pokemonListAdapter.updatePokemons(data)
         simple_progress_bar.visibility = View.GONE
-        rv_movies.adapter = movieListAdapter
+        rv_list.adapter = pokemonListAdapter
     }
 }

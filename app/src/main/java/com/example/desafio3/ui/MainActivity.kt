@@ -1,8 +1,8 @@
-package com.example.desafio3
+package com.example.desafio3.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.desafio3.databinding.ActivityMainBinding
+import com.example.desafio3.R
 
 class MainActivity : AppCompatActivity() {
 

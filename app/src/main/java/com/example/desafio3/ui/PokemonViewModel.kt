@@ -1,6 +1,9 @@
-package com.example.desafio3
+package com.example.desafio3.ui
 
 import androidx.lifecycle.*
+import com.example.desafio3.PokemonDetail
+import com.example.desafio3.PokemonResponse
+import com.example.desafio3.PokemonViewState
 import com.example.desafio3.data.PokemonRepositoryImpl
 import com.example.desafio3.domain.GetPokemonDetailsUseCase
 import com.example.desafio3.domain.GetPokemonListUseCase

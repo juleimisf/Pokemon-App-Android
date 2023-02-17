@@ -1,6 +1,5 @@
-package com.example.desafio3
+package com.example.desafio3.ui
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,26 +7,28 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.desafio3.Pokemon
+import com.example.desafio3.R
 
 class PokemonAdapter(private val onClick: (Pokemon) -> Unit) :
     RecyclerView.Adapter<PokemonAdapter.ViewHolder>() {
 
-    private var movies = listOf<Pokemon>()
+    private var pokemonList = listOf<Pokemon>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_movie_view, parent, false)
+            .inflate(R.layout.item_pokemon_view, parent, false)
         return ViewHolder(view)
     }
 
-    override fun getItemCount() = movies.size
+    override fun getItemCount() = pokemonList.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(movies[position], onClick)
+        holder.bind(pokemonList[position], onClick)
     }
 
-    fun updatePokemons(movies: List<Pokemon>) {
-        this.movies = movies
+    fun updatePokemons(pokemon: List<Pokemon>) {
+        this.pokemonList = pokemon
         notifyDataSetChanged()
     }
 

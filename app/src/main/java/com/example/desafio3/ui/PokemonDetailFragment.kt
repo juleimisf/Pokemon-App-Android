@@ -1,4 +1,4 @@
-package com.example.desafio3
+package com.example.desafio3.ui
 
 import android.os.Bundle
 import android.util.Log
@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
+import com.example.desafio3.*
 import com.example.desafio3.data.PokemonRepositoryImpl
 import kotlinx.android.synthetic.main.fragment_pokemons_detail.*
 
@@ -50,6 +51,9 @@ class PokemonDetailFragment : Fragment() {
                 }
                 is PokemonViewState.Error -> {
                     Log.e("Error", "get pokemon list failed :(")
+                }
+                else -> {
+                    throw IllegalArgumentException("No state view")
                 }
             }
         })

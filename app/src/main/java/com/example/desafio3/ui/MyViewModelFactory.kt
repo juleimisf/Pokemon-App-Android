@@ -1,4 +1,4 @@
-package com.example.desafio3
+package com.example.desafio3.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
